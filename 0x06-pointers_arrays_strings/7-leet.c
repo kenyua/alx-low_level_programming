@@ -1,19 +1,29 @@
 #include "main.h"
+
 /**
- * *string_toupper - capitalize a string
- * @str: pointer
- * Return: capitalzied string
-*/
+ * leet - transform to leet
+ * @s: char array string type
+ * Return: s transformed
+ */
 
-char *string_toupper(char *str)
+char *leet(char *s)
 {
-	int i;
+	int i, ii;
+	char s1[] = "aeotl";
+	char S1[] = "AEOTL";
+	char s2[] = "43071";
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (str[i] <= 'z' && str[i] >= 'a')
-			str[i] -= 32;
+		for (ii = 0; ii < 5; ii++)
+		{
+			if (s[i] == s1[ii] || s[i] == S1[ii])
+			{
+				s[i] = s2[ii];
+				break;
+			}
+		}
 	}
-	return (str);
+	return (s);
 }
 
